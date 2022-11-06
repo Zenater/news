@@ -1,0 +1,17 @@
+.container {
+  background-color: #fff;
+  padding: 10px;
+}
+.text {
+  cursor: pointer;
+  color: purple;
+}
+.hide {
+  cursor: pointer;
+  color: #366eff;
+}
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 0;
+  }
+}
