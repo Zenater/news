@@ -4,7 +4,7 @@ import {listAPI, NewsType} from '../../api/api';
 import {handleServerAppError} from '../../common/utils/error-utils';
 import {setAppStatus} from './appReducer';
 
-export type GetStories = {
+export type NewsInitialStateType = {
     allNews: number[];
     dataComments: {
         [key: number]: NewsType;
@@ -18,7 +18,7 @@ const initialState = {
     dataComments: {},
 };
 
-export const newsReducer = (state: GetStories = initialState, action: NewsActionType): GetStories => {
+export const newsReducer = (state: NewsInitialStateType = initialState, action: NewsActionType): NewsInitialStateType => {
     switch (action.type) {
         case 'NEWS/SET-ONE-NEWS':
             return {...state, dataNews: [...state.dataNews, action.news]};
