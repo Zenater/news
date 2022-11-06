@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getOneNewsTS } from '../../store/reducers/newsReducer';
+import { getOneNews } from '../../store/reducers/newsReducer';
 import { NavLink, useParams } from 'react-router-dom';
 import Moment from 'react-moment';
 import { AccordionDetails } from '@material-ui/core';
@@ -23,13 +23,13 @@ export const NewsPage = () => {
 
   const updateListComments = () => {
     if (id) {
-      dispatch(getOneNewsTS(+id));
+      dispatch(getOneNews(+id));
     }
   };
 
   useEffect(() => {
     if (id) {
-      dispatch(getOneNewsTS(+id));
+      dispatch(getOneNews(+id));
     }
   }, [dispatch, id]);
   return (

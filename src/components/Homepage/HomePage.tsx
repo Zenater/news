@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getNewsTS, getOneNewsTS } from '../../store/reducers/newsReducer';
+import { getNews, getOneNews } from '../../store/reducers/newsReducer';
 import { News } from '../News';
 import { selectAllNews, selectNews } from '../../store/selectors';
 import { useAppDispatch, useAppSelector } from '../../common/hooks/customHooks';
@@ -13,11 +13,11 @@ export const HomePage = () => {
 
   useEffect(() => {
     allNews.slice(0, 100).forEach((id) => {
-      dispatch(getOneNewsTS(id));
+      dispatch(getOneNews(id));
     });
   }, [allNews, dispatch]);
 
-  const updatePages = () => dispatch(getNewsTS());
+  const updatePages = () => dispatch(getNews());
 
   return (
     <div>

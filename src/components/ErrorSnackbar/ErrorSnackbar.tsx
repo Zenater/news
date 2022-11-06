@@ -1,7 +1,7 @@
 import React from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
-import { setAppErrorAC } from '../../store/reducers/appReducer';
+import { setAppError } from '../../store/reducers/appReducer';
 import { useAppDispatch, useAppSelector } from '../../common/hooks/customHooks';
 import { selectError } from '../../store/selectors';
 
@@ -18,7 +18,7 @@ export function ErrorSnackbar() {
     if (reason === 'clickaway') {
       return;
     }
-    dispatch(setAppErrorAC(null));
+    dispatch(setAppError(null));
   };
 
   return (

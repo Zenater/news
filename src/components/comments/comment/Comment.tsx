@@ -1,7 +1,7 @@
 import { Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { Comments } from '../Comments';
-import { getCommentTS } from '../../../store/reducers/newsReducer';
+import { getComment } from '../../../store/reducers/newsReducer';
 import s from './Comment.module.css';
 import { useAppDispatch, useAppSelector } from '../../../common/hooks/customHooks';
 import { Meta } from '../../Meta/Meta';
@@ -20,7 +20,7 @@ export const Comment: React.FC<PropsType> = ({ comment }) => {
   const [showComments, setShowComments] = useState(true);
 
   useEffect(() => {
-    dispatch(getCommentTS(comment));
+    dispatch(getComment(comment));
   }, [dispatch, comment]);
 
   const showCommentsHandler = () => {

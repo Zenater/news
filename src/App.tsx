@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import s from './App.module.css';
-import { getNewsTS } from './store/reducers/newsReducer';
+import { getNews } from './store/reducers/newsReducer';
 import { Navigates } from './components/Routes/Navigates';
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
@@ -16,8 +16,8 @@ export const App = () => {
   const allNews = useAppSelector(selectAllNews);
 
   useEffect(() => {
-    dispatch(getNewsTS());
-    const interval = setInterval(() => dispatch(getNewsTS()), 60000);
+    dispatch(getNews());
+    const interval = setInterval(() => dispatch(getNews()), 60000);
     return () => clearInterval(interval);
   }, []);
 
